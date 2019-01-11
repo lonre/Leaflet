@@ -8735,7 +8735,7 @@ function geometryToLayer(geojson, options) {
 	case 'MultiPoint':
 		for (i = 0, len = coords.length; i < len; i++) {
 			latlng = _coordsToLatLng(coords[i]);
-			layers.push(pointToLayer ? pointToLayer(geojson, latlng) : new Marker(latlng));
+			layers.push(pointToLayer ? pointToLayer(geojson, latlng, i) : new Marker(latlng));
 		}
 		return new FeatureGroup(layers);
 
